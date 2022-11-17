@@ -20,28 +20,28 @@ const footerDecoration = document.createElement("div")
 footerDecoration.className = "footer_cont_decoration";
 container.append(footerDecoration)
 
-const containerSrc = [
-    'img/iconHTML.png',
-    'img/iconCSS.png',
-    'img/iconJS.png',
-]
+// const containerSrc = [
+//     'img/iconHTML.png',
+//     'img/iconCSS.png',
+//     'img/iconJS.png',
+// ]
 
-containerSrc.forEach(element =>{
-    const divContainer = document.createElement("div"),
-        img = document.createElement("img")
-    img.className = "img";
-    img.src = element;
-    const longLine = document.createElement("div")
-    longLine.className = "text_decoration long-line";
-    const shortLine = document.createElement("div")
-    shortLine.className = "text_decoration short-line";
-    const longLine1 = document.createElement("div")
-    longLine1.className = "text_decoration long-line";
-    const footerContBar = document.createElement("div")
-    footerContBar.className = "footer_cont_bar";
-    divContainer.append(img, longLine, shortLine, longLine1, footerContBar)
-    slideContainer.append(divContainer)
-})
+// containerSrc.forEach(element =>{
+//     const divContainer = document.createElement("div"),
+//         img = document.createElement("img")
+//     img.className = "img";
+//     img.src = element;
+//     const longLine = document.createElement("div")
+//     longLine.className = "text_decoration long-line";
+//     const shortLine = document.createElement("div")
+//     shortLine.className = "text_decoration short-line";
+//     const longLine1 = document.createElement("div")
+//     longLine1.className = "text_decoration long-line";
+//     const footerContBar = document.createElement("div")
+//     footerContBar.className = "footer_cont_bar";
+//     divContainer.append(img, longLine, shortLine, longLine1, footerContBar)
+//     slideContainer.append(divContainer)
+// })
 
 const buttons = document.querySelectorAll('.btn')
 
@@ -72,4 +72,37 @@ const slideshow = () => {
 
 slideshow ()
 
-.footer_cont_decoration
+// structura text card
+
+const containerSrc_card = [
+    {title:"HTML 5", version:"V-5", info:"Limbaj hipertext", src: "img/iconHTML.png", href:"https://en.wikipedia.org/wiki/HTML5"},
+    {title:"CSS", version:"V-12Beta", info:"Limbaj stilistic" , src: "img/iconCSS.png",href:"https://en.wikipedia.org/wiki/CSS"},
+    {title:"JavaScript", version:"V-8Pro", info:"Limbaj international", src: "img/iconJS.png", href:"https://www.w3schools.com/js/"},
+]
+
+
+containerSrc_card.forEach(item =>{
+    const divContainer = document.createElement("div"),
+        img = document.createElement("img")
+    img.className = "img";
+    img.src = item.src;
+    // const longLine = document.createElement("div")
+    // longLine.className = "text_decoration long-line";
+    const tag_a = document.createElement("a")
+    tag_a.className = "href_title text_decoration long-line"
+    tag_a.href = item.href
+    tag_a.innerHTML = item.title
+    const shortLine = document.createElement("div")
+    shortLine.className = "text_decoration short-line";
+    shortLine.innerHTML = item.version
+    const longLine1 = document.createElement("div")
+    longLine1.className = "text_decoration long-line";
+    longLine1.innerHTML = item.info
+    const footerContBar = document.createElement("div")
+    footerContBar.className = "footer_cont_bar";
+    // longLine.append(tag_a)
+    divContainer.append(img, tag_a, shortLine, longLine1, footerContBar)
+    slideContainer.append(divContainer)
+})
+
+

@@ -9,9 +9,9 @@ body {
 .container {
     overflow: hidden;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 20px;
     width: 400px;
-    height: 500px;
+    height: 600px;
     box-shadow: 3px 3px 10px 0 #505055;
     background-color: #fcfdfd;
 }
@@ -30,10 +30,25 @@ body {
 
 .text_decoration {
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 50px;
-    height: 10px;
+    height: 30px;
     border-radius: 5px;
     background-color: #DCDCDCFF;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+.text_decoration:hover {
+    background-color: aquamarine;
+    color: rgb(228, 116, 108);
+    transition: all 1s ease;
+}
+
+.href_title {
+    text-decoration: none;
+    color: black;
+    transition: all 1s ease;
 }
 
 .short-line {
